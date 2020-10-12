@@ -1,0 +1,25 @@
+conda install -c menpo opencv3
+conda remove opencv
+
+############# From Helper Scripts Folder ############
+python grayScaler_and_rescaler.py ../neg_targetA/ ../neg_targetA_greyed_and_rescaled/
+
+python grayScaler_and_rescaler.py ../pos_targetA/ ../pos_targetA_greyed_and_rescaled/
+
+python create_bg_file.py ../neg_targetA_greyed_and_rescaled/
+
+############ Launch Annotation ################
+
+opencv_annotation --annotations=../pos_targetA_greyed_and_rescaled/file.txt --images=../pos_targetA_greyed_and_rescaled/
+
+opencv_annotation -annotations=/home/sach/Desktop/EGH455/target-a-classifier/pos_targetA_greyed_and_rescaled/file.txt -images=/home/sach/Desktop/EGH455/target-a-classifier/pos_targetA_greyed_and_rescaled/
+
+opencv_annotation -annotations /home/haider/Desktop/images/file.txt -images /home/haider/Dekstop/images/
+
+############ Create .vec file ################
+
+opencv_createsamples -info ../pos_targetA_greyed_and_rescaled/file.txt -num 201 -w 150 -h 100 -vec ../positives.vec
+
+opencv_traincascade -data stages -vec positives.vec -bg bg.txt -numPos 201 -numNeg 444 -numStages 2 -maxFalseAlarmRate 0.1 -w 150 -h 100 
+
+opencv_traincascade -data stages -vec positives.vec -bg bg.txt -numPos 201 -numNeg 444 -numStages 2 -maxFalseAlarmRate 0.1 -w 150 -h 100 -precalcValBufSize 3068 -precalcIdxBufSize 3068
