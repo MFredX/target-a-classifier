@@ -2,11 +2,11 @@ conda install -c menpo opencv3
 conda remove opencv
 
 ############# From Helper Scripts Folder ############
-python grayScaler_and_rescaler.py ../neg_targetA/ ../neg_targetA_greyed_and_rescaled/
+python grayScaler_and_rescaler.py ../images/neg_targetA/ ../images/neg_targetA_greyed_and_rescaled/
 
-python grayScaler_and_rescaler.py ../pos_targetA/ ../pos_targetA_greyed_and_rescaled/
+python grayScaler_and_rescaler.py ../images/pos_targetA/ ../images/pos_targetA_greyed_and_rescaled/
 
-python create_bg_file.py ../neg_targetA_greyed_and_rescaled/
+python create_bg_file.py ../images/neg_targetA_greyed_and_rescaled/
 
 ############ Launch Annotation ################
 
