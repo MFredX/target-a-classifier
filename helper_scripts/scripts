@@ -16,8 +16,8 @@ opencv_annotation -annotations /home/haider/Desktop/images/file.txt -images /hom
 
 ############ Create .vec file ################
 
-opencv_createsamples -info ../pos_targetA_greyed_and_rescaled/file.txt -num 201 -w 150 -h 100 -vec ../positives.vec
-
+opencv_createsamples -info ../images/pos_targetA_greyed_and_rescaled/file.txt -num 201 -w 150 -h 100 -vec ../positives.vec
+    
 opencv_traincascade -data stages -vec positives.vec -bg bg.txt -numPos 201 -numNeg 444 -numStages 2 -maxFalseAlarmRate 0.1 -w 150 -h 100 
 
 opencv_traincascade -data stages -vec positives.vec -bg bg.txt -numPos 201 -numNeg 444 -numStages 2 -maxFalseAlarmRate 0.1 -w 150 -h 100 -precalcValBufSize 3068 -precalcIdxBufSize 3068
