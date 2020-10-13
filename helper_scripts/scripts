@@ -2,18 +2,16 @@ conda install -c menpo opencv3
 conda remove opencv
 
 ############# From Helper Scripts Folder ############
+
 python grayScaler_and_rescaler.py ../images/neg_targetA/ ../images/neg_targetA_greyed_and_rescaled/
-
 python grayScaler_and_rescaler.py ../images/pos_targetA/ ../images/pos_targetA_greyed_and_rescaled/
-
 python create_bg_file.py ../images/neg_targetA_greyed_and_rescaled/
 
 ############ Launch Annotation ################
 
-opencv_annotation --annotations=../pos_targetA_greyed_and_rescaled/file.txt --images=../pos_targetA_greyed_and_rescaled/
+opencv_annotation --annotations=../images/pos_targetA_greyed_and_rescaled/file.txt --images=../images/pos_targetA_greyed_and_rescaled/
 
 opencv_annotation -annotations=/home/sach/Desktop/EGH455/target-a-classifier/pos_targetA_greyed_and_rescaled/file.txt -images=/home/sach/Desktop/EGH455/target-a-classifier/pos_targetA_greyed_and_rescaled/
-
 opencv_annotation -annotations /home/haider/Desktop/images/file.txt -images /home/haider/Dekstop/images/
 
 ############ Create .vec file ################
