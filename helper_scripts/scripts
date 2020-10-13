@@ -29,6 +29,7 @@ opencv_annotation -annotations /home/haider/Desktop/images/file.txt -images /hom
 opencv_createsamples -info ../images/pos_targetA_greyed_and_rescaled/file.txt -num 98 -w 150 -h 100 -vec ../positives.vec
 opencv_createsamples -info ../pos_targetA_greyed_and_rescaled/file.txt -img ../pos_targetA_greyed_and_rescaled/ -num 98 -w 150 -h 100 -vec positives.vec
 
+opencv_createsamples -info ../images/pos_targetA_greyed_and_rescaled/file.txt -img ../images/pos_targetA_greyed_and_rescaled/ -num 98 -w 150 -h 100 -vec ../positives.vec
 
 ################# Training Classifier ####################
 opencv_traincascade -data stages -vec positives.vec -bg bg.txt -numPos 201 -numNeg 444 -numStages 2 -maxFalseAlarmRate 0.1 -w 150 -h 100 
@@ -42,3 +43,6 @@ python grayScaler_and_rescaler.py ../test/ ../test_greyed_and_rescaled/
 python grayScaler_and_rescaler.py ../test2/ ../test2_greyed_and_rescaled/
 
 python cascade_tester.py ../test_greyed_and_rescaled ../results ../stages/cascade.xml
+
+####### HPC Scripts #############
+qsub -I -S/bin/bash -l walltime=2:00:00,ncpus=1,ngpus=1,mem=32G,gputype=P100
