@@ -1,7 +1,14 @@
+############### Creating Conda Enviroments #############
+conda create --name py36 python=3.6
+
 ############## Conda Scripts for package installations #########
+conda install python=3.6
 conda install -c menpo opencv3
 conda remove opencv
 conda install -c conda-forge opencv
+
+opencv4 works best for opencv_annotation
+opencv3 has support for opencv_createsamples
 
 ############# From Helper Scripts Folder ############
 
@@ -20,6 +27,7 @@ opencv_annotation -annotations /home/haider/Desktop/images/file.txt -images /hom
 ############ Create .vec file ################
 
 opencv_createsamples -info ../images/pos_targetA_greyed_and_rescaled/file.txt -num 98 -w 150 -h 100 -vec ../positives.vec
+opencv_createsamples -info ../pos_targetA_greyed_and_rescaled/file.txt -img ../pos_targetA_greyed_and_rescaled/ -num 98 -w 150 -h 100 -vec positives.vec
 
 
 ################# Training Classifier ####################
