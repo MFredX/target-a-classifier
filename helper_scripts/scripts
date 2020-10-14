@@ -45,4 +45,4 @@ python grayScaler_and_rescaler.py ../test2/ ../test2_greyed_and_rescaled/
 python cascade_tester.py ../test_greyed_and_rescaled ../results ../stages/cascade.xml
 
 ####### HPC Scripts #############
-qsub -I -S/bin/bash -l walltime=2:00:00,ncpus=1,ngpus=1,mem=32G,gputype=P100
+qsub -I -S/bin/bash -l walltime=2:00:00,ncpus=1,ngpus=1,mem=32G,gputype=P100 

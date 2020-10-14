@@ -47,7 +47,7 @@
 ../pos_targetA_greyed_and_rescaled/frameNumbers_1156(2).jpggrey_&_resized.jpg 1 39 53 26 18
 ../pos_targetA_greyed_and_rescaled/frameNumbers_1156.jpggrey_&_resized.jpg 1 40 52 24 20
 ../pos_targetA_greyed_and_rescaled/frameNumbers_1159.jpggrey_&_resized.jpg 1 44 59 23 19
-../pos_targetA_greyed_and_rescaled/frameNumbers_1161.jpggrey_&_resized.jpg 2 0 0 0 0 43 53 21 19
+../pos_targetA_greyed_and_rescaled/frameNumbers_1161.jpggrey_&_resized.jpg 1 43 53 21 19
 ../pos_targetA_greyed_and_rescaled/frameNumbers_1164.jpggrey_&_resized.jpg 1 43 57 24 25
 ../pos_targetA_greyed_and_rescaled/frameNumbers_1166.jpggrey_&_resized.jpg 1 47 62 22 23
 ../pos_targetA_greyed_and_rescaled/frameNumbers_1167.jpggrey_&_resized.jpg 1 47 62 20 23
