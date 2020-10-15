@@ -36,8 +36,7 @@ opencv_traincascade -data stages -vec positives.vec -bg bg.txt -numPos 201 -numN
 
 opencv_traincascade -data stages -vec positives.vec -bg bg.txt -numPos 201 -numNeg 444 -numStages 2 -maxFalseAlarmRate 0.1 -w 150 -h 100 -precalcValBufSize 3068 -precalcIdxBufSize 3068
 
-opencv_traincascade -data stages -vec positives.vec -bg bg.txt -numPos 98 -numNeg 444 -numStages 2 -maxFalseAlarmRate 0.1 -w 150 -h 100 -precalcValBufSize 14000 -precalcIdxBufSize 14000
-
+opencv_traincascade -data stages -vec positives.vec -bg bg.txt -numPos 98 -numNeg 444 -numStages 2 -maxFalseAlarmRate 0.1 -w 150 -h 100 -precalcValBufSize 5000 -precalcIdxBufSize 5000
 ######## Testing Classifier ###########
 python grayScaler_and_rescaler.py ../test/ ../test_greyed_and_rescaled/
 python grayScaler_and_rescaler.py ../test2/ ../test2_greyed_and_rescaled/
@@ -45,4 +44,4 @@ python grayScaler_and_rescaler.py ../test2/ ../test2_greyed_and_rescaled/
 python cascade_tester.py ../test_greyed_and_rescaled ../results ../stages/cascade.xml
 
 ####### HPC Scripts #############
-qsub -I -S/bin/bash -l walltime=2:00:00,ncpus=1,ngpus=1,mem=32G,gputype=P100 
+qsub -I -S/bin/bash -l walltime=4:00:00,ncpus=4,ngpus=1,mem=32G,gputype=P100 
