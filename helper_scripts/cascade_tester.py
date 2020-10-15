@@ -26,11 +26,11 @@ def test_samples():
             # read in image
             image = cv2.imread(readName)
             # Resize dimensions here
-            resized = cv2.resize(image, (20, 20))
+            # resized = cv2.resize(image, (20, 20))
             # convert to gray
-            gray = cv2.cvtColor(resized, cv2.COLOR_BGR2GRAY)
+            gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
             # run cascade clasifer on image
-            results = cc.detectMultiScale(gray, 1.05, 3)
+            results = cc.detectMultiScale(gray_image,1.05, 3)
             print(results)
             # draw rectangles around each positive result
             for x, y, w, h in results:
