@@ -26,7 +26,7 @@ def test_samples():
             # read in image
             image = cv2.imread(readName)
             # Resize dimensions here
-            resized = cv2.resize(image, (150, 100))
+            resized = cv2.resize(image, (20, 20))
             # convert to gray
             gray = cv2.cvtColor(resized, cv2.COLOR_BGR2GRAY)
             # run cascade clasifer on image

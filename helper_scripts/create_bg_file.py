@@ -8,7 +8,7 @@ def create_bg_file():
     for img in os.listdir(sys.argv[1]):
         # create file path string
         print(img)
-        line = 'neg_targetA' + '/' + img + '\n'
+        line = 'images/neg_targetA' + '/' + img + '\n'
         # write line to file
         with open('../bg.txt', 'a+') as f:
             f.write(line)
