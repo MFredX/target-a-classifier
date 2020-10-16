@@ -50,9 +50,9 @@ qsub -I -S/bin/bash -l walltime=4:00:00,ncpus=4,ngpus=1,mem=32G,gputype=P100
 python create_bg_file.py ../images/neg_targetA/
 python create_bg_file.py ../images/neg_targetA_greyed_and_rescaled/
 
-opencv_createsamples -img ../images/target_A.jpg -bg ../bg.txt -info ../images/pos_targetA/info.lst \
+opencv_createsamples -img ../images/target_A_pi.jpg -bg ../bg.txt -info ../images/pos_targetA/info.lst \
 -pngoutput ../images/pos_targetA/ -maxxangle 0.3 \
--maxyangle 0.3 -maxzangle 0.3 -bgcolor 150 -bgtresh 1 -num 2908 -w 20 -h 20
+-maxyangle 0.3 -maxzangle 0.3 -bgcolor 150 -bgtresh 1 -num 2908
 
 opencv_createsamples-info ../images/pos_targetA/info.lst -num 2908 -w 150 -h 100 -vec ../positives.vec
 

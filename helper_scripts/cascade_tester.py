@@ -17,6 +17,7 @@ import os
 def test_samples():
     # load cascade classifier
     cc = cv2.CascadeClassifier(sys.argv[3])
+    #cc=cv2.CascadeClassifier("../stages/cascade.xml")
     for img in os.listdir(sys.argv[1]):
         # check its a jpg file
         print("Processing ", img)

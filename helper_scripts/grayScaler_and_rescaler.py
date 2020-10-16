@@ -27,10 +27,11 @@ def main():
     for img in os.listdir(sys.argv[1]):
         print("Processing "+img)
         image_read = cv2.imread(source_path+img)
-        rescaled_image = rescaler(image_read)
-        greyscaled_image = grey_scaler(rescaled_image)
-        name = img + 'grey_&_resized'
-        cv2.imwrite(os.path.join(dest_path, name + '.jpg'), greyscaled_image)
+        #gray_image = cv2.cvtColor(image_read, cv2.COLOR_BGR2GRAY)
+        # rescaled_image = rescaler(image_read)
+        #greyscaled_image = grey_scaler(image_read)
+        name = img + 'greyed'
+        cv2.imwrite(os.path.join(dest_path, name + '.jpg'), image_read)
 
 
 main()
